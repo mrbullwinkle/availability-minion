@@ -87,7 +87,7 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 
 - Azure Monitor Logs stores all the availability transactions which can be easily accessed via Log Analytics + Kusto queries:
 
-![End-to-End transaction view](./media/05.png)
+![Log Analytics Kusto Query view](./media/06.png)
 
 One can then build custom log and metric based alerts to notify as soon as an outage is detected.
 
