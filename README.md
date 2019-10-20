@@ -73,13 +73,25 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 5. services.msc
 6. Start your service
 
-![Services.msc window](.media/03.png)
+![Services.msc window](./media/03.png)
 
 ### What you will see in the console once your service is running:
 
 - Summary Availabilty data with individual transaction durations:
 
-![Summary Availability view](.media/04.png)
+![Summary Availability view](./media/04.png)
+
+- Ability to drill into end-to-end transaction details:
+
+![End-to-End transaction view](./media/05.png)
+
+- Azure Monitor Logs stores all the availability transactions which can be easily accessed via Log Analytics + Kusto queries:
+
+![End-to-End transaction view](./media/05.png)
+
+One can then build custom log and metric based alerts to notify as soon as an outage is detected.
+
+
 
 
 
