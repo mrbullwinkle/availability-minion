@@ -1,5 +1,5 @@
 # availability-watcher
-Proof of concept side-project using a .NET Core 3.0 Worker Service for Azure Monitor - Application Insights Availability monitoring in hybrid/on prem environments running as Windows Service.
+Proof of concept side-project using a .NET Core 3.0 Worker Service for Azure Monitor - Application Insights Availability monitoring in hybrid/on prem environments running as a Windows Service.
 
 ## Overview
 
