@@ -21,7 +21,7 @@ This sample takes the code from Availability monitoring functions article and do
 
 If you want a step-by-step how to get started a recorded a video of the basic process for those who want a little more context of how it all works:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nAt1NbDLalQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Video of creating .NET Core 3.0 Worker Service for Hybrid/on-prem availability testing](https://www.youtube.com/watch?v=nAt1NbDLalQ&feature=youtu.be)
 
 ## Please note:
 
