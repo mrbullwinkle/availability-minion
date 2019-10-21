@@ -17,6 +17,12 @@ This sample takes the code from Availability monitoring functions article and do
 - Reads a separate config file and generates a list of URLs/Endpoints to test based on the contents of the file. (The Azure Function example took a single hardcoded url)
 - Adds the ability for the published .exe file to be installed/run as a standard windows service controllable via services.msc.
 
+## Video
+
+If you want a step-by-step how to get started a recorded a video of the basic process for those who want a little more context of how it all works:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nAt1NbDLalQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Please note:
 
 This is not intended for production use, and is just a sample to help give you ideas/get started. My current way of handling configuration input is extremely fragile and not a solution I would ever recommend. If I have time I will keep cleaning this up and adding to it.
