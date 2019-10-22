@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights;
 
 namespace Availability_Watcher
 {
@@ -8,7 +13,6 @@ namespace Availability_Watcher
     {
         public static void Main(string[] args)
         {
-
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -18,7 +22,6 @@ namespace Availability_Watcher
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>();
-                
                 });
     }
 }

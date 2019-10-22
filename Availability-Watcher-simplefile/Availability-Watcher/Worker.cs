@@ -12,7 +12,6 @@ using System.IO;
 using System.Collections.Generic;
 
 
-
 namespace Availability_Watcher
 {
 
@@ -27,19 +26,17 @@ namespace Availability_Watcher
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            string configPath = System.IO.Directory.GetCurrentDirectory();
-            string[] endpointAddresses = File.ReadAllLines($"{configPath}/config.txt");
-            string[] getikey = File.ReadAllLines($"{configPath}/ikey.txt");
-            string ikey = getikey[0];
-
             TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
-            configuration.InstrumentationKey = ikey;
+            configuration.InstrumentationKey = "afc62271-f6c9-49cf-af07-f573727e0b3f";
             var telemetryClient = new TelemetryClient(configuration);
 
             HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
+            string configPath = System.IO.Directory.GetCurrentDirectory();
+            string[] lines = File.ReadAllLines($"{configPath}/config.txt");
+
             List<string> uri = new List<string>();
-            foreach (string line in endpointAddresses)
+            foreach (string line in lines)
             {
                 uri.Add(line);
             }

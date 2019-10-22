@@ -1836,11 +1836,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\Availability-Watcher.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\source\\repos\\Availability-Watcher\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\Availability-Watcher.csproj",
       "projectName": "Availability-Watcher",
-      "projectPath": "C:\\Users\\Administrator\\source\\repos\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\Availability-Watcher.csproj",
+      "projectPath": "C:\\Users\\Administrator\\source\\repos\\Availability-Watcher\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\Availability-Watcher.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\source\\repos\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\source\\repos\\Availability-Watcher\\Backup\\Availability-Watcher-simplefile\\Availability-Watcher\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
