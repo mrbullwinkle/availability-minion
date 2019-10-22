@@ -115,7 +115,7 @@ namespace Availability_Watcher
                 _logger.LogError($"[Error]: {ex.Message}");
 
                 // optional - throw to fail the function
-                throw;
+                // throw;
             }
             finally
             {
