@@ -10,8 +10,7 @@ using System.Net.Http;
 using Microsoft.ApplicationInsights.DataContracts;
 using System.IO;
 using System.Collections.Generic;
-
-
+using System.Net;
 
 namespace Availability_Watcher
 {
@@ -53,15 +52,22 @@ namespace Availability_Watcher
                 {
                     foreach (string address in uri)
                     {
+
                         await TestAvailability(telemetryClient, HttpClient, address, _logger);
+
+                       //_= TestAvailability(telemetryClient, HttpClient, address, _logger);
+
                     }
+
+
                 }
 
                 await Task.Delay(10000, stoppingToken);
             }
         }
 
-        private static async Task TestAvailability(TelemetryClient telemetryClient, HttpClient HttpClient, String address, ILogger _logger)
+       private static async Task TestAvailability(TelemetryClient telemetryClient, HttpClient HttpClient, String address, ILogger _logger)
+
         {
             var availability = new AvailabilityTelemetry
             {
@@ -82,8 +88,8 @@ namespace Availability_Watcher
                     // add test results to availability telemetry property
                     availability.Properties.Add("HttpResponseStatusCode", Convert.ToInt32(httpResponse.StatusCode).ToString());
 
-                    // check if response content contains specific text
-                    string content = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync() : "";
+                   // check if response content contains specific text
+                   // string content = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync() : "";
                     if (httpResponse.IsSuccessStatusCode)
                     {
                         availability.Success = true;
@@ -97,9 +103,20 @@ namespace Availability_Watcher
                     }
                 }
             }
+            catch (System.Net.Sockets.SocketException se)
+            {
+                availability.Message = $"Test failed with response: {se.Message}";
+                _logger.LogWarning($"[Warning]: {availability.Message}");
+            }
+
             catch (TaskCanceledException e)
             {
                 availability.Message = $"Test timed out: {e.Message}";
+                _logger.LogDebug($"[Warning]: {availability.Message}");
+            }
+            catch (System.Net.Http.HttpRequestException hre)
+            {
+                availability.Message = $"Test timed out: {hre.Message}";
                 _logger.LogDebug($"[Warning]: {availability.Message}");
             }
             catch (Exception ex)
@@ -107,15 +124,16 @@ namespace Availability_Watcher
                 // track exception when unable to determine the state of web app
                 isMonitoringFailure = true;
                 var exceptionTelemetry = new ExceptionTelemetry(ex);
-                exceptionTelemetry.Context.Operation.Id = "test";
-                exceptionTelemetry.Properties.Add("TestName", "test");
-                exceptionTelemetry.Properties.Add("TestLocation", "test");
-                exceptionTelemetry.Properties.Add("TestUri", "test");
+               //  exceptionTelemetry.Context.Operation.Id = "test";
+                exceptionTelemetry.Properties.Add("Message", ex.Message);
+                exceptionTelemetry.Properties.Add("Source", ex.Source);
+                exceptionTelemetry.Properties.Add("Test site", address);
+                //exceptionTelemetry.Properties.Add("StackTrace", ex.StackTrace);
                 telemetryClient.TrackException(exceptionTelemetry);
                 _logger.LogError($"[Error]: {ex.Message}");
 
                 // optional - throw to fail the function
-                // throw;
+                //throw;
             }
             finally
             {
