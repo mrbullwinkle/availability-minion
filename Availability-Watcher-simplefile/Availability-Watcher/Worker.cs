@@ -112,12 +112,12 @@ namespace Availability_Watcher
             catch (TaskCanceledException e)
             {
                 availability.Message = $"Test timed out: {e.Message}";
-                _logger.LogDebug($"[Warning]: {availability.Message}");
+                _logger.LogWarning($"[Warning]: {availability.Message}");
             }
             catch (System.Net.Http.HttpRequestException hre)
             {
                 availability.Message = $"Test timed out: {hre.Message}";
-                _logger.LogDebug($"[Warning]: {availability.Message}");
+                _logger.LogWarning($"[Warning]: {availability.Message}");
             }
             catch (Exception ex)
             {
