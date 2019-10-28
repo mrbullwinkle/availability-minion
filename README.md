@@ -16,6 +16,7 @@ This sample takes the code from Availability monitoring functions article and do
 - Reads the ikey from a config file.
 - Reads a separate config file and generates a list of URLs/Endpoints to test based on the contents of the file. (The Azure Function example took a single hardcoded url)
 - Adds the ability for the published .exe file to be installed/run as a standard windows service controllable via services.msc.
+- Improves the try/catch logic to properly handle certain exceptions like incorrect hostnames so that they are registered within the availability UI blade rather than just be captured as exceptions.
 
 ## Video
 
