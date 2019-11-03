@@ -62,5 +62,5 @@ These are not intended/tested for production use, and are just samples to help g
 
 ## Getting up and running
 
-* [Availability-watcher-simplefile instructions]() (This was the first version, it has less features and is here just for reference.)
+* [Availability-watcher-simplefile instructions](Availability-Watcher-simplefile\instructions.md) (This was the first version, it has less features and is here just for reference.)
 * [availability-minion instructions]() (Use this version)
