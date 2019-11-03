@@ -13,7 +13,7 @@ https://outlook.com
 ```
 When running via Visual Studio you will see output like this:
 
-![Command Prompt screenshot](./media/01.png)
+![Command Prompt screenshot](../media/01.png)
 
 ## Test .exe locally
 
@@ -24,7 +24,7 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 
 When running direct via the .exe it should look like this:
 
-![Command Prompt screenshot](./media/01.png)
+![Command Prompt screenshot](../media/01.png)
 
 ## Run as a Windows Service
 
@@ -34,26 +34,26 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 3. Open an administrative command prompt.
 4. Run `sc create <new_service_name> binPath "path-to-availability-watcher\availability-watcher.exe"`
 
-![Create service command prompt](./media/02.png)
+![Create service command prompt](../media/02.png)
 
 5. services.msc
 6. Start your service
 
-![Services.msc window](./media/03.png)
+![Services.msc window](../media/03.png)
 
 ## What you will see in the console once your service is running:
 
 - Summary Availabilty data with individual transaction durations:
 
-![Summary Availability view](./media/04.png)
+![Summary Availability view](../media/04.png)
 
 - Ability to drill into end-to-end transaction details:
 
-![End-to-End transaction view](./media/05.png)
+![End-to-End transaction view](../media/05.png)
 
 - Azure Monitor Logs stores all the availability transactions which can be easily accessed via Log Analytics + Kusto queries:
 
-![Log Analytics Kusto Query view](./media/06.png)
+![Log Analytics Kusto Query view](../media/06.png)
 
 One can then build custom log and metric based alerts to notify as soon as an outage is detected.
 
