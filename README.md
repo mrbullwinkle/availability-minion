@@ -13,6 +13,11 @@ If you are one of these situations your primary option is to use the TrackAvaila
 
 The purpose of this project is to take that initial example Azure Functions code and modify it so it can be used to create an on premises based availability monitoring which can run from anywhere as a windows service. I am working on this and iterating as I have time and so far have created two different versions of this solution.
 
+## Please note:
+
+These are not intended/tested for production use, and are just samples to help give you ideas/get started. There is no official support for this code, and updates/improvements will be dependent on how much free time I have. I think a production ready solution could be built by expanding on these examples, but it would require additional work/testing. 
+
+
 ## [Availability-Watcher-simplefile](https://github.com/mrbullwinkle/availability-watcher/tree/master/Availability-Watcher-simplefile)
 
 - Removes the Azure Function specific code, and makes it so it can run standalone in a .NET Core 3.0 Worker Service.
@@ -23,7 +28,7 @@ The purpose of this project is to take that initial example Azure Functions code
 - Improves the try/catch logic to properly handle certain exceptions like incorrect hostnames so that they are registered within the availability UI blade rather than just be captured as exceptions.
 - runs tests one at a time and waits before each test is finished before executing the next test. (Good for small scale learning about availability tests, really bad for at scale monitoring when you want to run large number of tests at a regular interval. 
 
-## availability-minion (coming soon)
+## [availability-minion](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion)
 
 This is the latest version. New name, because I like to think of these type of small programs as little minions out gathering useful monitoring data. So "monitoring minion" or in this case "availability minion. It does most of what the first version did, and a whole bunch more. 
 
@@ -41,26 +46,15 @@ Here's whats new:
   * Dependencies Performance/Failures view for all TrackAvailability calls.
   * Heartbeat
   * ikey is now set via appsettings.json file
--Pseduo random function used to distribute individual test execution schedule across a range from 1 to 60000 milliseconds with tests being run for each url/endpoint approximately every 60 seconds. This is to help avoid too many tests being executed at the same time. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.   
+  * Pseduo random function used to distribute individual test execution schedule across a range from 1 to 60000 milliseconds with tests being run for each url/endpoint approximately every 60 seconds. This is to help avoid too many tests being executed at the same time. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.   
+
+## Getting up and running
+
+* [availability-minion instructions](availability-minion/instructions.md) (This is the latest version)
+* [Availability-watcher-simplefile instructions](Availability-Watcher-simplefile/instructions.md) (This was the first version, it has less features and is here just for reference.)
 
 ## Video
 
 If you want a step-by-step how to get started guide, I recorded a video of the basic process when I was working on the initial availability-watcher code: (The new availability-minion has a lot more functionality than the simple example I cover in the video, but if you want to get a sense of the basic mechanics particularly in how to turn a .NET Core 3.0 worker service into a windows service this will provide you the details you need)
 
 [Video of creating .NET Core 3.0 Worker Service for Hybrid/on-prem availability testing](https://www.youtube.com/watch?v=nAt1NbDLalQ&feature=youtu.be)
-
-## Please note:
-
-These are not intended/tested for production use, and are just samples to help give you ideas/get started. There is no official support for this code, and updates/improvements will be dependent on how much free time I have. I think a production ready solution could be built by expanding on these examples, but it would require additional work/testing. 
-
-## Prerequisites:
-
-- To work with the Visual Studio project files you need at least Visual Studio 2019 16.3.5
-- To run Availability-Watcher.exe or availability-minion.exe standalone or as a windows service you need at least Microsoft.NETCore.App' [version 3.0.0 Runtime](https://dotnet.microsoft.com/download/dotnet-core/3.0). 
-- An instrumentation key + a test Application Insights resource to send avaiability telemetry to. If you don't have an Application Insights resource you an create one by following [these instructions](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource). 
-- This solution **does not require any inbound connections** being opened in your network to the public internet, but it does still require limited outbound communication so that telemetry can be sent to the appropriate endpoint in Azure.
-
-## Getting up and running
-
-* [Availability-watcher-simplefile instructions](Availability-Watcher-simplefile\instructions.md) (This was the first version, it has less features and is here just for reference.)
-* [availability-minion instructions]() (Use this version)
