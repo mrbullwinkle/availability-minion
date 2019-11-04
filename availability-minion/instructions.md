@@ -43,9 +43,9 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 4. Run `sc create <new_service_name> binPath "path-to-availability-minion\availability-minion.exe"`
 
 ![Create service command prompt](../media/create-service.png)
-
-5. services.msc
-6. Start your service
+5. Copy your config.txt file to `C:\Windows\System32` (I will fix this later so the file doens't need to be in this location). 
+6. services.msc
+7. Start your service
 
 ![Services.msc window](../media/services.msc.png)
 
