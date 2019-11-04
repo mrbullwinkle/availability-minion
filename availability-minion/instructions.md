@@ -10,7 +10,7 @@
 ## Visual Studio 2019
 
 If running from VS 2019 just make sure you have a valid config.txt file in the `availability-minion` directory.
-Set your instrumentation key in the appsettings.json file. 
+**Set your instrumentation key in the appsettings.json file**. 
 
 The config.txt file should contain your list of endpoints with each endpoint you want to test on a separate line (again not the way I plan to do this eventually, but this is a simple proof of concept). So when opened the file should look like:
 ```
@@ -28,7 +28,7 @@ When running via Visual Studio you will see output like this:
 If you don't want to look at the code in Visual Studio and you just want to try out the very basic functionality as it currently stands you can do the following:
 1. Go to `Availability-minion\bin\Release\netcoreapp3.0\`
 2. If they are not currently present add a config.txt file to this directory following the same instructions from the Visual Studio section above except place the file in the same directory as the availability-minion.exe. Make sure the appsettings.json file in this directory contains the intrumentation key where you want your availability telemetry to be sent.
-3. Right-click and run Availability-Watcher.exe as admin.
+3. Right-click and run availability-minion.exe as admin.
 
 When running direct via the .exe it should look like this:
 
@@ -38,7 +38,7 @@ When running direct via the .exe it should look like this:
 
 If you don't want to look at the code in Visual Studio and you just want to try out the basic functionality running as a windows service do the following:
 1. Go to `availability-minion\bin\Release\netcoreapp3.0\`
-2. If not currently present add a config.txt file to this directory following the same instructions from the Visual Studio section above except place the files in the same directory as the availability-minion.exe.
+2. If not currently present add a config.txt file to this directory following the same instructions from the Visual Studio section above except place the files in the same directory as the availability-minion.exe. Like the instructions above the instrumentation key must now be set in the appsettings.json file.
 3. Open an administrative command prompt.
 4. Run `sc create <new_service_name> binPath "path-to-availability-minion\availability-minion.exe"`
 
