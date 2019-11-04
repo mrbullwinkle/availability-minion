@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "availability_minion": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
