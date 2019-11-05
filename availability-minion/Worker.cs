@@ -31,6 +31,9 @@ namespace availability_minion
 
             HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
+            //Add User-Agent info with word "bot" so analytics programs can understand that these are synthethic transactions and filter them out as needed
+            HttpClient.DefaultRequestHeaders.Add("User-Agent", "App Insights (availablity-minion) bot");
+
             List<string> testAddressList = new List<string>();
             foreach (string line in endpointAddresses)
             {
@@ -83,7 +86,6 @@ namespace availability_minion
                 RunLocation = System.Environment.MachineName,
                 Success = false
             };
-
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             bool isMonitoringFailure = false;
