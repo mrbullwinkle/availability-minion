@@ -40,7 +40,7 @@ If you don't want to look at the code in Visual Studio and you just want to try 
 1. Go to `availability-minion\bin\Release\netcoreapp3.0\`
 2. If not currently present add a config.txt file to this directory following the same instructions from the Visual Studio section above except place the files in the same directory as the availability-minion.exe. Like the instructions above the instrumentation key must now be set in the appsettings.json file.
 3. Open an administrative command prompt.
-4. Run `sc create <new_service_name> binPath "path-to-availability-minion\availability-minion.exe"`
+4. Run `sc create <new_service_name> binPath="path-to-availability-minion\availability-minion.exe"`
 
 ![Create service command prompt](../media/create-service.png)
 5. Copy your config.txt file to `C:\Windows\System32` (I will fix this later so the file doens't need to be in this location). 
