@@ -52,7 +52,7 @@ Here's whats new:
   
 ## [availability-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi)
 
-This is an alternative to the standard availability minion. The standard minion's config file only allows you to set all the sites/addresses you want to test and all the data is sent to a single ikey. The multi-minion version takes a config.txt file that expects each line to consist of a desired test address followed by a comma followed by an instrumentation key. So the config.txt file's contents would look like:
+This is an alternative to the standard availability minion. The standard minion's config file only allows you to set the sites/addresses you want to test and all the data is sent to a single ikey. The multi-minion version takes a config.txt file that expects each line to consist of a desired test address followed by a comma followed by an instrumentation key. So the config.txt file's contents would look like:
 
 ```
 https://opsconfig.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6
