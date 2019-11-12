@@ -1,3 +1,4 @@
+using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -17,6 +18,7 @@ namespace availability_minion
                 {
                     services.AddHostedService<Worker>();
                     services.AddLogging();
+                    services.AddSingleton<ITelemetryInitializer, TelemetryInitializer>();
                     services.AddApplicationInsightsTelemetryWorkerService();
                 });
     }

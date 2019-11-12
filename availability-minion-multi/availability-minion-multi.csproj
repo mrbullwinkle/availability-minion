@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>dotnet-availability_minion_multi-6E60E20B-31F6-4F6F-A044-783D7852D001</UserSecretsId>
+    <RootNamespace>availability_minion_multi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="3.0.0" />
+  </ItemGroup>
+</Project>

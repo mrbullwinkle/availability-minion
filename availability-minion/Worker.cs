@@ -17,6 +17,7 @@ namespace availability_minion
     {
         private readonly ILogger<Worker> _logger;
         public TelemetryClient telemetryClient;
+        public string[] endpointAddresses;
 
         public Worker(ILogger<Worker> logger, TelemetryClient tc)
         {
@@ -27,12 +28,21 @@ namespace availability_minion
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             string configPath = System.IO.Directory.GetCurrentDirectory();
-            string[] endpointAddresses = File.ReadAllLines($"{configPath}/config.txt");
+
+            if (File.Exists($"{configPath}/config.txt"))
+            {
+                endpointAddresses = File.ReadAllLines($"{configPath}/config.txt");
+            }
+
+            else
+            {
+                endpointAddresses = File.ReadAllLines($"C:/Program Files/Minion/config.txt");
+            }
 
             HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
 
             //Add User-Agent info with word "bot" so analytics programs can understand that these are synthethic transactions and filter them out as needed
-            HttpClient.DefaultRequestHeaders.Add("User-Agent", "App Insights (availablity-minion) bot");
+            HttpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (compatible; minionbot/1.0)");
 
             List<string> testAddressList = new List<string>();
             foreach (string line in endpointAddresses)
