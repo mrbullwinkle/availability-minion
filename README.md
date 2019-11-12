@@ -48,7 +48,21 @@ Here's whats new:
   * ikey is now set via appsettings.json file
 
   I also added a:
-  - Pseduo random number based functionality to distribute the individual test execution schedule across a range from 1 to 60000 milliseconds with tests being run for each url/endpoint approximately every 60 seconds. This is to help avoid too many tests being executed at the same time. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.   
+  - Pseduo random number based functionality to distribute the individual test execution schedule across a range from 1 to 60000 milliseconds with tests being run for each url/endpoint approximately every 60 seconds. This is to help avoid too many tests being executed at the same time. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.
+  
+## [availability-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi)
+
+This is an alternative to the standard availability minion. The standard minion's config file only allows you to set all the sites/addresses you want to test and all the data is sent to a single ikey. The multi-minion version takes a config.txt file that expects each line to consist of a desired test address followed by a comma followed by an instrumentation key. So the config.txt file's contents would look like:
+
+```
+https://opsconfig.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6
+https://microsoft.com, 83117d2a-dddd-eeee-8cd1-dc2a3040715c
+https://bing.com, 78247d22-e097-ffff-gggg-f255974b2bcf
+https://visualstudio.microsoft.com/, a48b65d8-bbbb-cccc-a452-8b5294f633e6
+https://azure.microsoft.com/, 83117d2a-dddd-eeee-8cd1-dc2a3040715c
+```
+
+Each test will send data to whatever key you assign on the corresponding line of the file. To make this work I am unable to use the same SDK that the standard availability minion uses so this makes this option a stripped down version. It has all the perf efficiences of the standard minion but does not have the automatic light up features: Live Metrics, App Map, etc.
 
 ## Getting up and running
 
