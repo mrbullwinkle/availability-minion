@@ -12,7 +12,7 @@
 - Cloud role name is now set via telemetry initializer to "Minion". (Previously no cloud role name was set).
 - config.txt file no longer has to be in the same directory as the availability-minion .exe. The directory where the .exe is being run from is checked first, but if the file is not present it will check for the presence of the file in `C:\Program Files\Minion`. (This was added to remove the need to place the config.txt file in sytem32 when running the minion as a windows service).
 - User-Agent is set to: "Mozilla/5.0 (compatible; minionbot/1.0)"
-- If you need to send to multiple different ikeys use the new [availabilty-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi).
+- If you need to send to multiple different ikeys use the new [availabilty-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi). The config.txt file for the multi-minion should look like [this](https://github.com/mrbullwinkle/availability-watcher#availability-minion-multi).
  
 ## Visual Studio 2019
 
