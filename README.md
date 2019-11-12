@@ -11,7 +11,7 @@ In the Azure Monitor world this type of external syntethtic transaction based mo
   
 If you are one of these situations your primary option is to use the TrackAvailability() method call and send your own custom availability telemetry. Microsoft put together an example of running TrackAvailability() from within an Azure Function in [this article](https://docs.microsoft.com/azure/azure-monitor/app/availability-azure-functions). This provides a good starter example of the basic mechnics of how to make a custom TrackAvailability() call, but it leaves the implementation of any HTTP/test code as an exercise to the reader. The first version of the Microsoft doc did show some basic HTTP test code in conjunction with the trackavailability code for testing a single page, but this will soon (or by the time you read this) will have been replaced with a more generic example that removes the HTTP code.
 
-The purpose of this project is to take that initial example Azure Functions code and modify it so it can be used to create an on premises based availability monitoring which can run from anywhere as a windows service. I am working on this and iterating as I have time and so far have created two different versions of this solution.
+The purpose of this project is to take that initial example Azure Functions code and modify it so it can be used to create an on premises based availability monitoring which can run from anywhere as a windows service. I am working on this and iterating as I have time and so far have created three different versions of this solution.
 
 ## Please note:
 
