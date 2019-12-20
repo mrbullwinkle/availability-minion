@@ -15,7 +15,7 @@ The purpose of this project is to take that initial example Azure Functions code
 
 ## Please note:
 
-These are not intended/tested for production use, and are just samples to help give you ideas/get started. There is no official support for this code, and updates/improvements will be dependent on how much free time I have. I think a production ready solution could be built by expanding on these examples, but it would require additional work/testing. 
+These examples have not been extensively tested for production use. There is no official support for this code, and updates/improvements will be dependent on how much free time I have. In some cases this code might be able to help unblock you, but do so at your own risk, and please test carefully.
 
 
 ## [Availability-Watcher-simplefile](https://github.com/mrbullwinkle/availability-watcher/tree/master/Availability-Watcher-simplefile)
