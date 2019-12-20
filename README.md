@@ -36,8 +36,9 @@ Here's whats new:
   * Heartbeat
   * ikey is now set via appsettings.json file
 
-  I also added a:
-  - Pseduo random number based functionality to distribute the individual test execution schedule across a range from 1 to 60000 milliseconds with tests being run for each url/endpoint approximately every 60 seconds. This is to help avoid too many tests being executed at the same time. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.
+  I also added:
+  - Distributed tracing support
+  - Pseduo random number based functionality to distribute the individual test execution schedule across a range from 1 to 300000 milliseconds with tests being run for each url/endpoint approximately every 5 minutes. This is to help avoid too many tests being executed at the same time if you were to scale up to running thousands of tests from a single minion. This should allow for more accurate test response time results, as well as greatly increase the number of tests that a single availability-minion can run.
   
 ## [availability-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi)
 
