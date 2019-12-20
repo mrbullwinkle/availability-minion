@@ -17,17 +17,6 @@ The purpose of this project is to take that initial example Azure Functions code
 
 These examples have not been extensively tested for production use. There is no official support for this code, and updates/improvements will be dependent on how much free time I have. In some cases this code might be able to help unblock you, but do so at your own risk, and please test carefully.
 
-
-## [Availability-Watcher-simplefile](https://github.com/mrbullwinkle/availability-watcher/tree/master/Availability-Watcher-simplefile)
-
-- Removes the Azure Function specific code, and makes it so it can run standalone in a .NET Core 3.0 Worker Service.
-- Removes the content match (Can be added back later as a modifiable parameter)
-- Reads the ikey from a simple .txt based config file.
-- Reads a separate .txt based config file and generates a list of URLs/Endpoints to test based on the contents of the file. (The old Microsoft Azure Function example took a single hardcoded url)
-- Adds the ability for the published .exe file to be installed/run as a standard windows service controllable via services.msc.
-- Improves the try/catch logic to properly handle certain exceptions like incorrect hostnames so that they are registered within the availability UI blade rather than just be captured as exceptions.
-- runs tests one at a time and waits before each test is finished before executing the next test. (Good for small scale learning about availability tests, really bad for at scale monitoring when you want to run large number of tests at a regular interval. 
-
 ## [availability-minion](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion)
 
 This is the latest version. New name, because I like to think of these type of small programs as little minions out gathering useful monitoring data. So "monitoring minion" or in this case "availability minion. It does most of what the first version did, and a whole bunch more. 
