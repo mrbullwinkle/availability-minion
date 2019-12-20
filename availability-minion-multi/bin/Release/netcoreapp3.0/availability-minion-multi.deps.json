@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.0": {
       "availability-minion-multi/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
           "Microsoft.Extensions.Hosting": "3.0.0",
           "Microsoft.Extensions.Hosting.WindowsServices": "3.0.0"
         },
@@ -16,15 +16,15 @@
           "availability-minion-multi.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/2.11.0": {
+      "Microsoft.ApplicationInsights/2.12.0": {
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "4.6.0",
           "System.Runtime.InteropServices": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {
-            "assemblyVersion": "2.11.0.0",
-            "fileVersion": "2.11.0.21474"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
@@ -458,12 +458,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.ApplicationInsights/2.11.0": {
+    "Microsoft.ApplicationInsights/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jPdBGfjld2NHQqirwFX+Y6Hu+lRCfTzDpbq7XI8bIOrgSvZ6LSucO+c6wOTFenGOF2oB2yhpvMC0xOWlTATiWw==",
-      "path": "microsoft.applicationinsights/2.11.0",
-      "hashPath": "microsoft.applicationinsights.2.11.0.nupkg.sha512"
+      "sha512": "sha512-4vZcVaxywAzfLm5mAc2/llaZQTzbCqu9KirxxI/t49AkZH5Qxf7JxuAMUuv2/6JEdOOkGDzpvdrrIlf6LkFGcg==",
+      "path": "microsoft.applicationinsights/2.12.0",
+      "hashPath": "microsoft.applicationinsights.2.12.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/3.0.0": {
       "type": "package",

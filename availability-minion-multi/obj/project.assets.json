@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "Microsoft.ApplicationInsights/2.11.0": {
+      "Microsoft.ApplicationInsights/2.12.0": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "4.6.0",
@@ -571,13 +571,14 @@
     }
   },
   "libraries": {
-    "Microsoft.ApplicationInsights/2.11.0": {
-      "sha512": "jPdBGfjld2NHQqirwFX+Y6Hu+lRCfTzDpbq7XI8bIOrgSvZ6LSucO+c6wOTFenGOF2oB2yhpvMC0xOWlTATiWw==",
+    "Microsoft.ApplicationInsights/2.12.0": {
+      "sha512": "4vZcVaxywAzfLm5mAc2/llaZQTzbCqu9KirxxI/t49AkZH5Qxf7JxuAMUuv2/6JEdOOkGDzpvdrrIlf6LkFGcg==",
       "type": "package",
-      "path": "microsoft.applicationinsights/2.11.0",
+      "path": "microsoft.applicationinsights/2.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "icon.png",
         "lib/net45/Microsoft.ApplicationInsights.dll",
         "lib/net45/Microsoft.ApplicationInsights.xml",
         "lib/net46/Microsoft.ApplicationInsights.dll",
@@ -586,7 +587,7 @@
         "lib/netstandard1.3/Microsoft.ApplicationInsights.xml",
         "lib/netstandard2.0/Microsoft.ApplicationInsights.dll",
         "lib/netstandard2.0/Microsoft.ApplicationInsights.xml",
-        "microsoft.applicationinsights.2.11.0.nupkg.sha512",
+        "microsoft.applicationinsights.2.12.0.nupkg.sha512",
         "microsoft.applicationinsights.nuspec"
       ]
     },
@@ -1824,7 +1825,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.0": [
-      "Microsoft.ApplicationInsights >= 2.11.0",
+      "Microsoft.ApplicationInsights >= 2.12.0",
       "Microsoft.Extensions.Hosting >= 3.0.0",
       "Microsoft.Extensions.Hosting.WindowsServices >= 3.0.0"
     ]
@@ -1872,7 +1873,7 @@
         "dependencies": {
           "Microsoft.ApplicationInsights": {
             "target": "Package",
-            "version": "[2.11.0, )"
+            "version": "[2.12.0, )"
           },
           "Microsoft.Extensions.Hosting": {
             "target": "Package",

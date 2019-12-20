@@ -6,7 +6,7 @@ using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace availability_minion_multi
+namespace availabilityMinionMulti
 {
     public class Program
     {

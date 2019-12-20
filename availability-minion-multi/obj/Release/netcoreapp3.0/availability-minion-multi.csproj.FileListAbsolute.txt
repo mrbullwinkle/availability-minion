@@ -42,3 +42,4 @@ C:\Users\Administrator\source\repos\availability-minion-multi\obj\Release\netcor
 C:\Users\Administrator\source\repos\availability-minion-multi\obj\Release\netcoreapp3.0\availability-minion-multi.csproj.CopyComplete
 C:\Users\Administrator\source\repos\availability-minion-multi\obj\Release\netcoreapp3.0\availability-minion-multi.dll
 C:\Users\Administrator\source\repos\availability-minion-multi\obj\Release\netcoreapp3.0\availability-minion-multi.pdb
+C:\Users\Administrator\source\repos\availability-minion-multi\obj\Release\netcoreapp3.0\availability-minion-multi.csprojAssemblyReference.cache

@@ -12,12 +12,14 @@ using System.IO;
 using System.Collections.Generic;
 
 
-namespace availability_minion_multi
+namespace availabilityMinionMulti
 {
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
         public string[] configFile;
+        public int testFrequency = 300000; //5 minutes in milliseconds (Edit this value to change the frequency of your tests)
+
 
         public Worker(ILogger<Worker> logger)
         {
@@ -53,8 +55,8 @@ namespace availability_minion_multi
             TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
             var telemetryClient = new TelemetryClient(configuration);
 
-            HttpClient HttpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
-            HttpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (compatible; minionbot/1.0)");
+            HttpClient client = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
+            client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0; MinionBot)");
 
             var testSchedule = new Dictionary<string, DateTime>();
             Random rand = new Random();
@@ -64,64 +66,75 @@ namespace availability_minion_multi
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-
                 if (telemetryClient != null)
                 {
                     for (int i =0; i < testAddressList.Count; i++)
                     {
                         {
                             DateTime currentTime = DateTime.Now;
-                            DateTime scheduledRunTime = currentTime.AddMilliseconds(60000);
-                            int resultRandom = rand.Next(0, 60000);
-                            DateTime randStartTime = currentTime.AddMilliseconds(resultRandom);
 
                             if (!testSchedule.ContainsKey(testAddressList[i]))
                             {
+                                // Run only once for each address, generate initial random start time
+                                // between 0 and testFrequency. Default= 300,000 milliseconds (5 minutes)
+                                int resultRandom = rand.Next(0, testFrequency);
+                                DateTime randStartTime = currentTime.AddMilliseconds(resultRandom);
                                 testSchedule.Add(testAddressList[i], randStartTime);
                             }
 
                             DateTime checkPrevScheduledTime = testSchedule[testAddressList[i]];
 
+                            // Prevent execution of test until scheduled time occurs
                             if (checkPrevScheduledTime <= currentTime)
                             {
-                                _ = TestAvailability(telemetryClient, HttpClient, testAddressList[i], ikeys[i], _logger);
+                                _ = TestAvailability(telemetryClient, client, testAddressList[i], ikeys[i], _logger);
+
+                                // Next scheduled execution is set to 5 minutes from now
+                                DateTime scheduledRunTime = currentTime.AddMilliseconds(testFrequency); 
                                 testSchedule[testAddressList[i]] = scheduledRunTime;
                             }
                         }
                     }
                 }
 
-                await Task.Delay(1000, stoppingToken);
+                await Task.Delay(100, stoppingToken).ConfigureAwait(false);
             }
         }
 
-        private static async Task TestAvailability(TelemetryClient telemetryClient, HttpClient HttpClient, String address, string ikey, ILogger _logger)
+        private static async Task TestAvailability(TelemetryClient telemetryClient, HttpClient client, String address, string ikey, ILogger _logger)
         {
             var availability = new AvailabilityTelemetry
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString("N"),
                 Name = address,
                 RunLocation = System.Environment.MachineName,
-                Success = false
+                Success = false        
             };
+
+            string testRunId = availability.Id;
+            availability.Context.InstrumentationKey = ikey;
+            availability.Context.Cloud.RoleName = "minion";
+            availability.Context.Operation.Id = availability.Id;
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            bool isMonitoringFailure = false;
-
-            availability.Context.InstrumentationKey = ikey;
-            availability.Context.Cloud.RoleName = "minion";
-            
+            DateTimeOffset startTimeTest = DateTimeOffset.UtcNow;
 
             try
             {
-                using (var httpResponse = await HttpClient.GetAsync(address))
+                var request = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri(address),
+                    Method = HttpMethod.Get
+                };
+                request.Headers.Add("SyntheticTest-RunId", testRunId);
+                request.Headers.Add("Request-Id", "|" + testRunId);
+
+                using (var httpResponse = await client.SendAsync(request).ConfigureAwait(false))
                 {
                     // add test results to availability telemetry property
                     availability.Properties.Add("HttpResponseStatusCode", Convert.ToInt32(httpResponse.StatusCode).ToString());
 
-                    // check if response content contains specific text
-                    string content = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync() : "";
                     if (httpResponse.IsSuccessStatusCode)
                     {
                         availability.Success = true;
@@ -135,55 +148,28 @@ namespace availability_minion_multi
                     }
                 }
             }
-            catch (System.Net.Sockets.SocketException se)
-            {
-                availability.Message = $"Test failed with socket exception, response: {se.Message}";
-                _logger.LogWarning($"[Warning]: {availability.Message}");
-            }
-
-            catch (TaskCanceledException e)
-            {
-                availability.Message = $"Test failed due to monitoring interruption: {e.Message}";
-                _logger.LogWarning($"[Warning]: {availability.Message}");
-            }
-            catch (System.Net.Http.HttpRequestException hre)
-            {
-                availability.Message = $"Test failed with an HTTP request exception, response: {hre.Message}";
-                _logger.LogWarning($"[Warning]: {availability.Message}");
-            }
             catch (Exception ex)
             {
                 // track exception when unable to determine the state of web app
-                isMonitoringFailure = true;
+                availability.Message = ex.Message;
                 var exceptionTelemetry = new ExceptionTelemetry(ex);
                 exceptionTelemetry.Context.InstrumentationKey = ikey;
                 exceptionTelemetry.Context.Cloud.RoleName = "minion";
-                exceptionTelemetry.Context.Operation.Id = "test";
-                exceptionTelemetry.Properties.Add("TestName", "test");
-                exceptionTelemetry.Properties.Add("TestLocation", "test");
-                exceptionTelemetry.Properties.Add("TestUri", "test");
+                exceptionTelemetry.Context.Operation.Id = availability.Id;
+                exceptionTelemetry.Properties.Add("TestAddress", address);
+                exceptionTelemetry.Properties.Add("RunLocation", availability.RunLocation);
                 telemetryClient.TrackException(exceptionTelemetry);
                 _logger.LogError($"[Error]: {ex.Message}");
-
-                // optional - throw to fail the function
-                //throw;
             }
             finally
             {
                 stopwatch.Stop();
+
                 availability.Duration = stopwatch.Elapsed;
-                availability.Timestamp = DateTimeOffset.UtcNow;
+                availability.Timestamp = startTimeTest;
 
-
-                if (!isMonitoringFailure)
-                {
-                    telemetryClient.TrackAvailability(availability);
-                    _logger.LogInformation($"Availability telemetry for {availability.Name} is sent.");
-                }
-
-                // call flush to ensure telemetry is sent
-                telemetryClient.Flush();
-
+                telemetryClient.TrackAvailability(availability);
+                _logger.LogInformation($"Availability telemetry for {availability.Name} is sent.");
             }
         }
 
