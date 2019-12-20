@@ -7,13 +7,6 @@
 - An instrumentation key + a test Application Insights resource to send avaiability telemetry to. If you don't have an Application Insights resource you an create one by following [these instructions](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource). 
 - This solution **does not require any inbound connections** being opened in your network to the public internet, but it does still require limited outbound communication so that telemetry can be sent to the appropriate endpoint in Azure.
 
-## Updates:
-
-- Cloud role name is now set via telemetry initializer to "Minion". (Previously no cloud role name was set).
-- config.txt file no longer has to be in the same directory as the availability-minion .exe. The directory where the .exe is being run from is checked first, but if the file is not present it will check for the presence of the file in `C:\Program Files\Minion`. (This was added to remove the need to place the config.txt file in sytem32 when running the minion as a windows service).
-- User-Agent is set to: "Mozilla/5.0 (compatible; minionbot/1.0)"
-- If you need to send to multiple different ikeys use the new [availabilty-minion-multi](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion-multi). The config.txt file for the multi-minion should look like [this](https://github.com/mrbullwinkle/availability-watcher#availability-minion-multi).
- 
 ## Visual Studio 2019
 
 If running from VS 2019 just make sure you have a valid config.txt file in the `availability-minion` directory.

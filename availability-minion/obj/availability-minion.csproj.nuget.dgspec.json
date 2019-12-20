@@ -43,7 +43,7 @@
           "dependencies": {
             "Microsoft.ApplicationInsights.WorkerService": {
               "target": "Package",
-              "version": "[2.8.2, )"
+              "version": "[2.12.0, )"
             },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",

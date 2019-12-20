@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.0": {
       "availability-minion/1.0.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights.WorkerService": "2.8.2",
+          "Microsoft.ApplicationInsights.WorkerService": "2.12.0",
           "Microsoft.Extensions.Hosting": "3.0.0",
           "Microsoft.Extensions.Hosting.WindowsServices": "3.0.0"
         },
@@ -16,21 +16,21 @@
           "availability-minion.dll": {}
         }
       },
-      "Microsoft.ApplicationInsights/2.11.0": {
+      "Microsoft.ApplicationInsights/2.12.0": {
         "dependencies": {
           "System.Diagnostics.DiagnosticSource": "4.6.0",
           "System.Runtime.InteropServices": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.ApplicationInsights.dll": {
-            "assemblyVersion": "2.11.0.0",
-            "fileVersion": "2.11.0.21474"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.DependencyCollector/2.11.2": {
+      "Microsoft.ApplicationInsights.DependencyCollector/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
           "Microsoft.Extensions.DiagnosticAdapter": "1.1.0",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
           "System.Data.SqlClient": "4.3.1",
@@ -39,25 +39,25 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AI.DependencyCollector.dll": {
-            "assemblyVersion": "2.11.2.0",
-            "fileVersion": "2.11.2.28447"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.EventCounterCollector/2.11.2": {
+      "Microsoft.ApplicationInsights.EventCounterCollector/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0"
+          "Microsoft.ApplicationInsights": "2.12.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AI.EventCounterCollector.dll": {
-            "assemblyVersion": "2.11.2.0",
-            "fileVersion": "2.11.2.28447"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.PerfCounterCollector/2.11.2": {
+      "Microsoft.ApplicationInsights.PerfCounterCollector/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
           "Microsoft.Extensions.Caching.Memory": "1.0.0",
           "Microsoft.Extensions.PlatformAbstractions": "1.1.0",
           "System.Diagnostics.PerformanceCounter": "4.5.0",
@@ -67,56 +67,56 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AI.PerfCounterCollector.dll": {
-            "assemblyVersion": "2.11.2.0",
-            "fileVersion": "2.11.2.28447"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.WindowsServer/2.11.2": {
+      "Microsoft.ApplicationInsights.WindowsServer/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
-          "Microsoft.ApplicationInsights.DependencyCollector": "2.11.2",
-          "Microsoft.ApplicationInsights.PerfCounterCollector": "2.11.2",
-          "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
+          "Microsoft.ApplicationInsights.DependencyCollector": "2.12.0",
+          "Microsoft.ApplicationInsights.PerfCounterCollector": "2.12.0",
+          "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel": "2.12.0",
           "System.Diagnostics.DiagnosticSource": "4.6.0",
           "System.Runtime.Serialization.Json": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AI.WindowsServer.dll": {
-            "assemblyVersion": "2.11.2.0",
-            "fileVersion": "2.11.2.28447"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.11.0": {
+      "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
           "Newtonsoft.Json": "10.0.3",
           "System.IO.FileSystem.AccessControl": "4.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AI.ServerTelemetryChannel.dll": {
-            "assemblyVersion": "2.11.0.0",
-            "fileVersion": "2.11.0.21474"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
-      "Microsoft.ApplicationInsights.WorkerService/2.8.2": {
+      "Microsoft.ApplicationInsights.WorkerService/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
-          "Microsoft.ApplicationInsights.DependencyCollector": "2.11.2",
-          "Microsoft.ApplicationInsights.EventCounterCollector": "2.11.2",
-          "Microsoft.ApplicationInsights.PerfCounterCollector": "2.11.2",
-          "Microsoft.ApplicationInsights.WindowsServer": "2.11.2",
-          "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
+          "Microsoft.ApplicationInsights.DependencyCollector": "2.12.0",
+          "Microsoft.ApplicationInsights.EventCounterCollector": "2.12.0",
+          "Microsoft.ApplicationInsights.PerfCounterCollector": "2.12.0",
+          "Microsoft.ApplicationInsights.WindowsServer": "2.12.0",
+          "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel": "2.12.0",
           "Microsoft.Extensions.DependencyInjection": "3.0.0",
-          "Microsoft.Extensions.Logging.ApplicationInsights": "2.11.0"
+          "Microsoft.Extensions.Logging.ApplicationInsights": "2.12.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.ApplicationInsights.WorkerService.dll": {
-            "assemblyVersion": "2.8.2.0",
-            "fileVersion": "2.8.2.0"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
@@ -396,15 +396,15 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging.ApplicationInsights/2.11.0": {
+      "Microsoft.Extensions.Logging.ApplicationInsights/2.12.0": {
         "dependencies": {
-          "Microsoft.ApplicationInsights": "2.11.0",
+          "Microsoft.ApplicationInsights": "2.12.0",
           "Microsoft.Extensions.Logging": "3.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.ApplicationInsights.dll": {
-            "assemblyVersion": "2.11.0.0",
-            "fileVersion": "2.11.0.21511"
+            "assemblyVersion": "2.12.0.21496",
+            "fileVersion": "2.12.0.21496"
           }
         }
       },
@@ -1732,54 +1732,54 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.ApplicationInsights/2.11.0": {
+    "Microsoft.ApplicationInsights/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jPdBGfjld2NHQqirwFX+Y6Hu+lRCfTzDpbq7XI8bIOrgSvZ6LSucO+c6wOTFenGOF2oB2yhpvMC0xOWlTATiWw==",
-      "path": "microsoft.applicationinsights/2.11.0",
-      "hashPath": "microsoft.applicationinsights.2.11.0.nupkg.sha512"
+      "sha512": "sha512-4vZcVaxywAzfLm5mAc2/llaZQTzbCqu9KirxxI/t49AkZH5Qxf7JxuAMUuv2/6JEdOOkGDzpvdrrIlf6LkFGcg==",
+      "path": "microsoft.applicationinsights/2.12.0",
+      "hashPath": "microsoft.applicationinsights.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.DependencyCollector/2.11.2": {
+    "Microsoft.ApplicationInsights.DependencyCollector/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-cyefZmp25JG1F0i7xmI0evFVb3gwUGT4Hcm34S0wAje+xtyyrHcTjbQqSdhYesxhh2Xaug6NHyVZX4Es5zLL6A==",
-      "path": "microsoft.applicationinsights.dependencycollector/2.11.2",
-      "hashPath": "microsoft.applicationinsights.dependencycollector.2.11.2.nupkg.sha512"
+      "sha512": "sha512-iJvY+9TadzYt/ZhA6YpTrkWlWgKaIpqjgGxzxygGYsLZb1puNyIRoIQnx782ewGN3Lxecr+hn/MX5hFFQTHX8A==",
+      "path": "microsoft.applicationinsights.dependencycollector/2.12.0",
+      "hashPath": "microsoft.applicationinsights.dependencycollector.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.EventCounterCollector/2.11.2": {
+    "Microsoft.ApplicationInsights.EventCounterCollector/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-meagBGq7du3KXJaPeY+YGie++iFpDzKx5u3IFIQAnOKazBKQexcXWTfvCIP199817q+1eQiEgUKOb+qWbB6IMQ==",
-      "path": "microsoft.applicationinsights.eventcountercollector/2.11.2",
-      "hashPath": "microsoft.applicationinsights.eventcountercollector.2.11.2.nupkg.sha512"
+      "sha512": "sha512-5DiGj+6SoeirRebiQc03t0pAUXKnu57FQkECTanawumOLtqExVmUD7+JJZMODf5/e2Exet5T3SmGquQQcmKsbw==",
+      "path": "microsoft.applicationinsights.eventcountercollector/2.12.0",
+      "hashPath": "microsoft.applicationinsights.eventcountercollector.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.PerfCounterCollector/2.11.2": {
+    "Microsoft.ApplicationInsights.PerfCounterCollector/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1gAvn8PBSn5lXrpufuSYIIOnGwzuXgnF61zGhtIXunV5D9MUMtdl5wD00ShAe4nr0njPF5yluTj6rSsUWhASuA==",
-      "path": "microsoft.applicationinsights.perfcountercollector/2.11.2",
-      "hashPath": "microsoft.applicationinsights.perfcountercollector.2.11.2.nupkg.sha512"
+      "sha512": "sha512-JuTajXgNs4yEQPzFNpbCbOpr6iWvM+s1AvYfGgB1hcVTHFgi6v502hsqceVrj2SthDPiOScscelpy8gQmHtS/Q==",
+      "path": "microsoft.applicationinsights.perfcountercollector/2.12.0",
+      "hashPath": "microsoft.applicationinsights.perfcountercollector.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.WindowsServer/2.11.2": {
+    "Microsoft.ApplicationInsights.WindowsServer/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BeryB8ol2scX3MdhbTTJybB4+jq4gVrcXk7iK71qXWBggAlo+Y5iyB+KLyKbmHtrrpxMfa5qsP/nMUxitepcng==",
-      "path": "microsoft.applicationinsights.windowsserver/2.11.2",
-      "hashPath": "microsoft.applicationinsights.windowsserver.2.11.2.nupkg.sha512"
+      "sha512": "sha512-23U0xxXaA1FRx/NjClOh3mW11x83/tiXrEGjTVmVTn42wXGBuYhxD09j+sqNOQ5EcezhjET0C97IxN1/4cXS8A==",
+      "path": "microsoft.applicationinsights.windowsserver/2.12.0",
+      "hashPath": "microsoft.applicationinsights.windowsserver.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.11.0": {
+    "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-x2oW+pHO/CCs3EBLWuNCY5A/gqP0YeUBKVWQE1vuyLwghg79PtO41W+KKZyt7KmRi2Cu35orrwKK+ViOf1SRHQ==",
-      "path": "microsoft.applicationinsights.windowsserver.telemetrychannel/2.11.0",
-      "hashPath": "microsoft.applicationinsights.windowsserver.telemetrychannel.2.11.0.nupkg.sha512"
+      "sha512": "sha512-mNnUgiNbmab/zo5sb0ON3B7bAQoTqNPq1vqS9TbXoS3poTN9vBi5nTg9zKQYUzmuAK68jf0RnKP341GyPucNHA==",
+      "path": "microsoft.applicationinsights.windowsserver.telemetrychannel/2.12.0",
+      "hashPath": "microsoft.applicationinsights.windowsserver.telemetrychannel.2.12.0.nupkg.sha512"
     },
-    "Microsoft.ApplicationInsights.WorkerService/2.8.2": {
+    "Microsoft.ApplicationInsights.WorkerService/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qY+HjEN7/6wtHJCvtPA98Xelc9NtGWTJ8Wyqj+36flfJkp80TVFsn+MZuYmjUbRaHs5ERA8llDg0nu0LjCNS9Q==",
-      "path": "microsoft.applicationinsights.workerservice/2.8.2",
-      "hashPath": "microsoft.applicationinsights.workerservice.2.8.2.nupkg.sha512"
+      "sha512": "sha512-Pgi8ErwyjkW6sGXl4Jf4l8eE74jqRqXo/GWvlMyAEdVlg2kTF62VkeOo6RGb7vEPkD/ZEnEuQwJxcmwRc8efeA==",
+      "path": "microsoft.applicationinsights.workerservice/2.12.0",
+      "hashPath": "microsoft.applicationinsights.workerservice.2.12.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
@@ -1935,12 +1935,12 @@
       "path": "microsoft.extensions.logging.abstractions/3.0.0",
       "hashPath": "microsoft.extensions.logging.abstractions.3.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Logging.ApplicationInsights/2.11.0": {
+    "Microsoft.Extensions.Logging.ApplicationInsights/2.12.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mwjRYkkdCf6ZKsHdXEJCxwzsO3/+mdtn9AlycJCAHitqUnfyxhEt+2vXh+2BQcI9CIcx/jephgNWNXodrFFbDA==",
-      "path": "microsoft.extensions.logging.applicationinsights/2.11.0",
-      "hashPath": "microsoft.extensions.logging.applicationinsights.2.11.0.nupkg.sha512"
+      "sha512": "sha512-UkxvKg5iDv0/KQSnEklVcTtEAO/a1KTcGWMA/50IG8bIR9csenejfBBdtv8K8mB8n+pkyFFFzOCp2koWKNCqMA==",
+      "path": "microsoft.extensions.logging.applicationinsights/2.12.0",
+      "hashPath": "microsoft.extensions.logging.applicationinsights.2.12.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging.Configuration/3.0.0": {
       "type": "package",
