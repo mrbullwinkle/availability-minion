@@ -54,7 +54,7 @@ https://azure.microsoft.com/, 83117d2a-dddd-eeee-8cd1-dc2a3040715c
 
 Each test will send data to whatever key you assign on the corresponding line of the file. To make this work I am unable to use the same SDK that the standard availability minion uses so this makes this option a stripped down version. It has all the perf efficiences of the standard minion but does not have the automatic light up features: Live Metrics, App Map, etc.
 
-## [Availability.Minion.Multi.WithPing]()
+## [Availability.Minion.Multi.WithPing](https://github.com/mrbullwinkle/availability-minion/tree/master/Availability.Minion.Multi.WithPing)
 
 New experimental minion that supports swapping between HttpClient based tests and Ping based tests.
 
