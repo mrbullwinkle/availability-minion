@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Availability.Minion.Multi.WithPing": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
