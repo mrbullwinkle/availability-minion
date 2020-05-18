@@ -64,7 +64,7 @@ New experimental minion that supports swapping between HttpClient based tests an
 
 Config.txt format:
 
-<target-address>,<ikey>,<https or ping>
+`<target-address>,<ikey>,<https or ping>`
 
 ```
 https://opsconfig.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
