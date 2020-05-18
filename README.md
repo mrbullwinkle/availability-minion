@@ -59,7 +59,7 @@ Each test will send data to whatever key you assign on the corresponding line of
 New experimental minion that supports swapping between HttpClient based tests and Ping based tests.
 
 - Adds .NET Core 3.1 support
-- Uses `System.NET.Ping` for Ping tests
+- Uses `System.Net.Ping` for Ping tests
 - Updated to use latest stable release of the Application Insights Base API 2.14.0
 
 Config.txt format:
