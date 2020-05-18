@@ -54,6 +54,44 @@ https://azure.microsoft.com/, 83117d2a-dddd-eeee-8cd1-dc2a3040715c
 
 Each test will send data to whatever key you assign on the corresponding line of the file. To make this work I am unable to use the same SDK that the standard availability minion uses so this makes this option a stripped down version. It has all the perf efficiences of the standard minion but does not have the automatic light up features: Live Metrics, App Map, etc.
 
+## [Availability.Minion.Multi.WithPing]()
+
+New experimental minion that supports swapping between HttpClient based tests and Ping based tests.
+
+- Adds .NET Core 3.1 support
+- Uses `System.NET.Ping` for Ping tests
+- Updated to use latest stable release of the Application Insights Base API 2.14.0
+
+Config.txt format:
+
+<target-address>,<ikey>,<https or ping>
+
+```
+https://opsconfig.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
+https://microsoft.com, 83117d2a-dddd-eeee-8cd1-dc2a3040715c, https
+https://bing.com, 78247d22-e097-ffff-gggg-f255974b2bcf, https
+https://visualstudio.microsoft.com/, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
+https://azure.microsoft.com/, 83117d2a-dddd-eeee-8cd1-dc2a3040715c, https
+https://docs.microsoft.com, 78247d22-e097-ffff-gggg-f255974b2bcf, https
+https://xbox.com/en-US, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
+https://www.microsoft.com/en-us/surface, 83117d2a-f8b9-483a-8cd1-dc2a3040715c, https
+https://azure.microsoft.com/en-us/, 78247d22-e097-ffff-gggg-f255974b2bcf, https
+https://www.office.com/, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
+https://outlook.live.com/owa/, 83117d2a-dddd-eeee-8cd1-dc2a3040715c, https
+https://mixer.com, 78247d22-e097-ffff-gggg-f255974b2bcf, https
+https://onedrive.live.com/about/en-us/, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
+www.microsoft.com, 83117d2a-dddd-eeee-8cd1-dc2a3040715c, ping
+www.bing.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
+products.office.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+www.linkedin.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+github.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
+partner.microsoft.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+dotnet.microsoft.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
+www.minecraft.net, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+192.168.1.150, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+```
+
+
 ## Getting up and running
 
 * [availability-minion instructions](availability-minion/instructions.md) (This is the latest version)
