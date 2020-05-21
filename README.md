@@ -19,10 +19,10 @@ These examples have not been extensively tested for production use. There is no 
 
 ## [availability-minion](https://github.com/mrbullwinkle/availability-watcher/tree/master/availability-minion)
 
-This is the latest version. New name, because I like to think of these type of small programs as little minions out gathering useful monitoring data. So "monitoring minion" or in this case "availability minion. It does most of what the first version did, and a whole bunch more. 
+I call it a "minion", because I like to think of these type of small programs as little minions out gathering useful monitoring data. In similar spirt to Netflix's "Chaos Monkey" though slightly more helpful and less destructive. So "monitoring minion" or in this case "availability minion. It does most of what the first version did, and a whole bunch more. 
 
 Here's what's the same:
-- Removes the Azure Function specific code, and makes it so it can run standalone in a .NET Core 3.0 Worker Service
+- Removes the Azure Function specific code, and makes it so it can run standalone in a .NET Core 3.0 Worker Service 
 - Removes the content match (Can be added back later as a modifiable parameter)
 - Reads a separate .txt based config file and generates a list of URLs/Endpoints to test based on the contents of the file. (The old Microsoft Azure Function example took a single hardcoded url)
 - Adds the ability for the published .exe file to be installed/run as a standard windows service controllable via services.msc.
@@ -61,6 +61,8 @@ New experimental minion that supports swapping between HttpClient based tests an
 - Adds .NET Core 3.1 support
 - Uses `System.Net.Ping` for Ping tests
 - Updated to use latest stable release of the Application Insights Base API 2.14.0
+
+I still need to put detailed instructions together for this one, but they are fairly similar to the standard multi-minion instructions other than that the config file requires additional options, and you need .NET Core 3.1 whereas the other projects are still on 3.0 though they should upgrade without requiring any code changes.
 
 Config.txt format:
 
