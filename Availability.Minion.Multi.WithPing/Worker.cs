@@ -19,7 +19,7 @@ namespace Availability.Minion.Multi.WithPing
     {
         private readonly ILogger<Worker> _logger;
         public string[] configFile;
-        public int testFrequency = 60000; //5 minutes in milliseconds (Edit this value to change the frequency of your tests)
+        public int testFrequency = 300000; //5 minutes in milliseconds (Edit this value to change the frequency of your tests)
 
 
         public Worker(ILogger<Worker> logger)
