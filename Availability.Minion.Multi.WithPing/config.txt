@@ -13,10 +13,10 @@ https://mixer.com, 78247d22-e097-ffff-gggg-f255974b2bcf, https
 https://onedrive.live.com/about/en-us/, a48b65d8-bbbb-cccc-a452-8b5294f633e6, https
 www.microsoft.com, 83117d2a-dddd-eeee-8cd1-dc2a3040715c, ping
 www.bing.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
-products.office.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+www.products.office.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
 www.linkedin.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
-github.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
-partner.microsoft.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
-dotnet.microsoft.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
+www.github.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
+www.partner.microsoft.com, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
+www.dotnet.microsoft.com, a48b65d8-bbbb-cccc-a452-8b5294f633e6, ping
 www.minecraft.net, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
 192.168.1.150, 78247d22-e097-ffff-gggg-f255974b2bcf, ping
